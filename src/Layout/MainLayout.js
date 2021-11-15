@@ -24,9 +24,10 @@ const useResize = () => {
     const scrolling = () => {
 
         let nowDevice = 'mobile'
-        if (window.innerWidth <= 320) {
+
+        if (window.innerWidth <= 768) {
             nowDevice = 'mobile'
-        } else if (window.innerWidth < 768) {
+        } else if (window.innerWidth <= 1023) {
             nowDevice = 'tablet'
         } else {
             nowDevice = 'web'
