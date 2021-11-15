@@ -7,6 +7,19 @@ html,body,#root{
 *{
   box-sizing: border-box;
   text-decoration: none;
+  margin: 0px;
+
+  /*드래그 금지*/
+  -ms-user-select: none; 
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/*선택 제거*/
+*::selection {
+  background-color:  rgba( 255, 255, 255, 0 );;
 }
 
 body {
@@ -14,10 +27,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont,'Spartan','Antonio','Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    font-weight: 400; font-size: 14px;  line-height: 25px;
+    font-weight: 400; font-size: 14px;  line-height: 25px;  color: #FFF;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
