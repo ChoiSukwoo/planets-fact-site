@@ -34,9 +34,9 @@ const W_Selecter = styled.h4`
   }
 `
 
-function W_Header({ PlanetInfo }) {
+function W_Header({ PlanetInfo,SetPlanet}) {
 
-  let PlanetSelecter = PlanetInfo.map((value, key) => <W_Selecter key={key} color={value.color} className="W_Selecter">{value.name.toUpperCase()}</W_Selecter>)
+  let PlanetSelecter = PlanetInfo.map((value, key) => <W_Selecter key={key} color={value.color} onClick={()=>SetPlanet(value.name)} className="W_Selecter">{value.name.toUpperCase()}</W_Selecter>)
 
   return (
     <ViewCover className="ViewCover">
@@ -63,9 +63,9 @@ const T_Selecter = styled.h4`
   display: flex;  align-items: flex-end;
 `
 
-function T_Header({ PlanetInfo }) {
+function T_Header({ PlanetInfo,SetPlanet}) {
 
-  let PlanetSelecter = PlanetInfo.map((value, key) => <T_Selecter key={key} className="T_Selecter">{value.name.toUpperCase()}</T_Selecter>)
+  let PlanetSelecter = PlanetInfo.map((value, key) => <T_Selecter key={key}  onClick={()=>SetPlanet(value.name)}  className="T_Selecter">{value.name.toUpperCase()}</T_Selecter>)
 
   return (
     <ViewCover className="ViewCover">
@@ -109,7 +109,7 @@ const M_Circle = styled.div`
   background-color: ${props => props.color};
 `
 
-function M_Header({ HeaderState, PlanetInfo }) {
+function M_Header({ HeaderState, PlanetInfo,SetPlanet}) {
 
   useEffect(() => {
     HeaderState.setheader('open')
@@ -120,7 +120,7 @@ function M_Header({ HeaderState, PlanetInfo }) {
   }, [])
 
 
-  let PlanetSelecter = PlanetInfo.map((value, key) => <M_Selecter key={key} className="M_Selecter" onClick={() => HeaderState.setheader('close')}><M_SelecterNm className="M_SelecterNm"><M_Circle color={value.color}/> {value.name.toUpperCase()}</M_SelecterNm><ArrowSvg/></M_Selecter>)
+  let PlanetSelecter = PlanetInfo.map((value, key) => <M_Selecter key={key} className="M_Selecter" onClick={() => {HeaderState.setheader('close'); SetPlanet(value.name);}}  ><M_SelecterNm className="M_SelecterNm"><M_Circle color={value.color}/> {value.name.toUpperCase()}</M_SelecterNm><ArrowSvg/></M_Selecter>)
 
   let changeHeaderState = HeaderState.header == "close" ? <LineSvg  fill="#fff" onClick={() => HeaderState.setheader('open')} /> : <LineSvg fill="#979797" />
 
@@ -142,7 +142,7 @@ function M_Header({ HeaderState, PlanetInfo }) {
 }
 
 
-function Header({ Device, HeaderState, PlanetInfo }) {
+function Header({ Device, HeaderState, PlanetInfo, SetPlanet }) {
 
   let View
 
@@ -156,7 +156,7 @@ function Header({ Device, HeaderState, PlanetInfo }) {
   }
 
   return (
-    <View HeaderState={HeaderState} PlanetInfo={PlanetInfo} />
+    <View HeaderState={HeaderState} PlanetInfo={PlanetInfo} SetPlanet={SetPlanet} />
   );
 
 }
