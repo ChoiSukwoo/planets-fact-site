@@ -69,15 +69,16 @@ const useHeaderOpen = () => {
 
 const usePlanet = () => {
 
-    const planetInfo = Planet.map((value, key) => ({name:value.name, color:value.color}))
+    const planetName = Planet.map((value, key) => ({name:value.name, color:value.color}))
 
-    const [state, setState] = useState(Planet[0]);
+    const [planetInfo,setPlanetInfo] = useState('overview')
 
-    const setPlanet = (name) =>{
+    const [planet, setPlanet] = useState(Planet[0]);
+
+    const planetSet = (name) =>{
         Planet.some(function(value){
             if(value.name == name){
-                setState(value);
-                console.log(value)
+                setPlanet(value);
                 return true
             }
         });
@@ -86,9 +87,11 @@ const usePlanet = () => {
     useEffect(() => { }, []);
 
     return {
+        planetName:planetName,
+        setPlanetInfo : setPlanetInfo,
         planetInfo:planetInfo,
-        planet: state,
-        setPlanet: setPlanet
+        setPlanet: planetSet,
+        planet: planet
     };
 }
 
@@ -102,8 +105,8 @@ function MainLayout() {
 
     return (
         <View bgSvg={bgStar}>
-            <Header Device={device} HeaderState={headerState} PlanetInfo={planet.planetInfo} SetPlanet={planet.setPlanet}></Header>
-            <Content></Content>
+            <Header Device={device} HeaderState={headerState} Planet={planet}></Header>
+            <Content Device={device} Planet={planet}></Content>
         </View>
     );
 }
