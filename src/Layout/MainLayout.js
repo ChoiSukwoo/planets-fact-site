@@ -33,8 +33,6 @@ const useResize = () => {
             nowDevice = 'web'
         }
 
-        console.log("width : ", window.innerWidth, " height : ", window.innerHeight, " device : ", nowDevice);
-
         setState({
             x: window.scrollX,
             y: window.scrollY,

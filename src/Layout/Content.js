@@ -70,7 +70,7 @@ const W_PlantInfoSelected = styled.h3`
   background-color: ${props => props.color};    border: 1px solid ${props => props.color} ;
 `
 
-const W_PlantInfoSelectNum = styled.h3`
+const W_PlantInfoSelectNum = styled.div`
   opacity: 0.5;
 `
 
@@ -88,8 +88,6 @@ const W_PlantFigureTitle = styled.h4`
 const W_PlantFigureContent = styled.h2``
 
 function W_Content({ Planet, Device }) {
-
-  console.log(Planet.planet)
 
   let PlanetImg = Planet.planetInfo == "overview" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} /> : Planet.planetInfo == "structure" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.internal} width={Planet.planet.size[Device]} /> : <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} />
   let PlanetGeologyImg = Planet.planetInfo == "geology" ? <W_PlanGeologyImg src={process.env.PUBLIC_URL + Planet.planet.images.geology} /> : ""
@@ -204,8 +202,6 @@ const T_PlantFigureContent = styled.h2`
 
 
 function T_Content({ Planet, Device }) {
-
-  console.log(Planet.planet)
 
   let PlanetImg = Planet.planetInfo == "overview" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} /> : Planet.planetInfo == "structure" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.internal} width={Planet.planet.size[Device]} /> : <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} />
   let PlanetGeologyImg = Planet.planetInfo == "geology" ? <T_PlanGeologyImg src={process.env.PUBLIC_URL + Planet.planet.images.geology} /> : ""
@@ -337,8 +333,6 @@ const M_PlantFigureContent = styled.h2`
 
 
 function M_Content({ Planet, Device, HeaderState }) {
-
-  console.log(Planet.planet)
 
   let PlanetImg = Planet.planetInfo == "overview" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} /> : Planet.planetInfo == "structure" ? <img src={process.env.PUBLIC_URL + Planet.planet.images.internal} width={Planet.planet.size[Device]} /> : <img src={process.env.PUBLIC_URL + Planet.planet.images.planet} width={Planet.planet.size[Device]} />
   let PlanetGeologyImg = Planet.planetInfo == "geology" ? <M_PlanGeologyImg src={process.env.PUBLIC_URL + Planet.planet.images.geology} /> : ""
