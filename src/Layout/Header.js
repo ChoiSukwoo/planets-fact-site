@@ -6,7 +6,7 @@ import { ReactComponent as LineSvg } from '../Resource/icon-hamburger.svg';
 import { ReactComponent as ArrowSvg } from '../Resource/icon-chevron.svg';
 
 const ViewCover = styled.div`
-  border-bottom : 1px solid #979797;
+  border-bottom : 1px solid rgba(151,151,151,0.2);
 `
 
 const Title = styled.div`
@@ -91,7 +91,7 @@ const M_ViewHeader = styled.div`
 
 const M_SelecterCover = styled.div`
   height: 100%; width: 100%;
-  display: flex;  flex-direction: column; justify-content: center;
+  display: ${props => props.display};  flex-direction: column; justify-content: center;
 `
 
 const M_Selecter = styled.div`
@@ -122,10 +122,10 @@ function M_Header({ HeaderState, PlanetName,SetPlanet}) {
 
   let PlanetSelecter = PlanetName.map((value, key) => <M_Selecter key={key} className="M_Selecter" onClick={() => {HeaderState.setheader('close'); SetPlanet(value.name);}}  ><M_SelecterNm className="M_SelecterNm"><M_Circle color={value.color}/> {value.name.toUpperCase()}</M_SelecterNm><ArrowSvg/></M_Selecter>)
 
-  let changeHeaderState = HeaderState.header == "close" ? <LineSvg  fill="#fff" onClick={() => HeaderState.setheader('open')} /> : <LineSvg fill="#979797" />
+  let changeHeaderState = HeaderState.header == "close" ? <LineSvg  fill="#fff" onClick={() => HeaderState.setheader('open')} /> : <LineSvg fill="rgba(151,151,151,0.25)" />
 
   return (
-    <M_View className="M_View">
+    <M_View className="M_View" >
       <ViewCover className="ViewCover">
 
         <M_ViewHeader className="M_ViewHeader">
@@ -134,7 +134,7 @@ function M_Header({ HeaderState, PlanetName,SetPlanet}) {
         </M_ViewHeader>
       </ViewCover>
 
-      <M_SelecterCover className="M_SelecterCover">
+      <M_SelecterCover className="M_SelecterCover" display={HeaderState.header=="open" ? "flex" : "none"}>
         {PlanetSelecter}
       </M_SelecterCover>
     </M_View>

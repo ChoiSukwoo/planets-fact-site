@@ -8,7 +8,7 @@ import Planet from '../Resource/data.json'
 import bgStar from '../Resource/background-stars.svg'
 
 const View = styled.div`
-    width: 100%; height: 100%;
+    min-width: 100%; min-height: 100%;  width: fit-content; height: fit-content;
     display:flex; flex-direction: column;
     background-color: #070724;  background-image: url(${props => props.bgSvg});
 `
@@ -106,7 +106,7 @@ function MainLayout() {
     return (
         <View bgSvg={bgStar}>
             <Header Device={device} HeaderState={headerState} Planet={planet}></Header>
-            <Content Device={device} Planet={planet}></Content>
+            <Content Device={device} HeaderState={headerState} Planet={planet}></Content>
         </View>
     );
 }
