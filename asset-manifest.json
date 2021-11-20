@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/planets-fact-site/static/css/main.8a41b720.chunk.css",
-    "main.js": "/planets-fact-site/static/js/main.1b356853.chunk.js",
-    "main.js.map": "/planets-fact-site/static/js/main.1b356853.chunk.js.map",
+    "main.js": "/planets-fact-site/static/js/main.fc928aa8.chunk.js",
+    "main.js.map": "/planets-fact-site/static/js/main.fc928aa8.chunk.js.map",
     "runtime-main.js": "/planets-fact-site/static/js/runtime-main.4668a021.js",
     "runtime-main.js.map": "/planets-fact-site/static/js/runtime-main.4668a021.js.map",
     "static/js/2.4cd42c1f.chunk.js": "/planets-fact-site/static/js/2.4cd42c1f.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.4668a021.js",
     "static/js/2.4cd42c1f.chunk.js",
     "static/css/main.8a41b720.chunk.css",
-    "static/js/main.1b356853.chunk.js"
+    "static/js/main.fc928aa8.chunk.js"
   ]
 }
